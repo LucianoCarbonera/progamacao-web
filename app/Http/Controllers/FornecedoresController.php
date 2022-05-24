@@ -9,7 +9,8 @@ class FornecedoresController extends Controller
 {
     
     function cadastro_novo(){
-        return view('novo_fornecedor');
+        $fornecedores = Fornecedor::all();
+        return view('novo_fornecedor',['fornecedor' => $fornecedores]);
     }
 
     function novo(Request $req){

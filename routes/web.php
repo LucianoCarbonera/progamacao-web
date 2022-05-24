@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\FornecedoresController;
 use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\ProdutosFornecedorController;
 use App\Http\Controllers\CategoriaController;
 
 Route::get('/laravel', function () {
@@ -53,6 +54,7 @@ Route::get('/produtos/novo', [ProdutosController::class, 'cadastro'])->name('pro
 Route::post('/produtos/novo', [ProdutosController::class, 'novo'])->name('produtos_salvar');
 
 Route::get('/produtos/listar', [ProdutosController::class, 'listar'])->name('produtos_listar');
+Route::get('/produtos/listar/{id}', [ProdutosFornecedorController::class, 'listar'])->name('produtos_listar_forn');
 Route::get('/produto/{slug}', [ProdutosController::class, 'exibir'])->name('produtos_exibir');
 
 Route::get('/categorias/nova', [CategoriaController::class, 'cadastro'])->name('categorias_nova');

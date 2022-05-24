@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 200);
-            $table->unsignedBigInteger('categoria');
             $table->float('preco');
-
+            $table->unsignedBigInteger('categoria');
+            $table->unsignedBigInteger('fornecedor');
+            
             $table->foreign('categoria')->references('id')->on('categoria');
+            $table->foreign('fornecedor')->references('id')->on('fornecedores');
 
             $table->timestamps();
         });

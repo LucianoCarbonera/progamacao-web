@@ -26,11 +26,13 @@
         <td>
             <a href="{{ route('fornecedores_excluir', ['id' => $c->id]) }}" onclick="excluir({{ $c->id }})" class="btn btn-danger">Excluir</a>
             <a href="{{ route('fornecedores_alterar', ['id' => $c->id]) }}" class="btn btn-dark">Alterar</a>
+            <a href="{{ route('produtos_listar_forn', ['id' => $c->id]) }}" class="btn btn-primary">Listar Produtos</a>
         </td>
     </tr>
     @endforeach
 
     <a href="{{ route('fornecedores_novo') }}" class="btn btn-primary">Novo Fornecedor</a>
+    
 
     </tbody>
 </table>

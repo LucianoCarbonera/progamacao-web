@@ -8,7 +8,9 @@ Produto - Novo
 <form action="{{ route('produtos_salvar') }}" method="post" >
     @csrf
     <label for="nome">Nome</label>
-    <input type="text" name="nome" id="nome"><br>
+    <input type="text" name="nome" id="nome"><br><br>
+    <label for="valor">Preço</label>
+    <input type="number" name="preco" id="preco"><br>
     <label for="categoria">Categoria
     <select name="categoria" class="form-select">
                                     @foreach($categorias as $e)
@@ -20,9 +22,18 @@ Produto - Novo
                                 </select>
 
     </label><br>
+    <label for="fornecedor">Fornecedor
+    <select name="fornecedor" class="form-select">
+                                    @foreach($fornecedores as $e)
+
+                                    <option value="{{$e->id}}">{{$e->nome}}</option>
+
+                                    @endforeach
+
+                                </select>
+
+    </label><br><br>
     
-    <label for="valor">Preço unitário</label>
-    <input type="number" name="preco" id="preco"><br>
     <input type="submit">
 </form>
 @endsection
