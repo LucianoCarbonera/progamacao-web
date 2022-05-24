@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\FornecedoresController;
+use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\CategoriaController;
 
 Route::get('/laravel', function () {
     return view('welcome');
@@ -44,3 +46,14 @@ Route::get('/fornecedores/listar', [FornecedoresController::class, 'listar'])->n
 Route::get('/fornecedores/excluir/{id}', [FornecedoresController::class, 'excluir'])->name('fornecedores_excluir');
 
 Route::get('/fornecedores/alterar/{id}', [FornecedoresController::class, 'alterar'])->name('fornecedores_alterar');
+
+
+
+Route::get('/produtos/novo', [ProdutosController::class, 'cadastro'])->name('produtos_novo');
+Route::post('/produtos/novo', [ProdutosController::class, 'novo'])->name('produtos_salvar');
+
+Route::get('/produtos/listar', [ProdutosController::class, 'listar'])->name('produtos_listar');
+Route::get('/produto/{slug}', [ProdutosController::class, 'exibir'])->name('produtos_exibir');
+
+Route::get('/categorias/nova', [CategoriaController::class, 'cadastro'])->name('categorias_nova');
+Route::post('/categorias/nova', [CategoriaController::class, 'novo'])->name('categorias_salvar');
