@@ -2,8 +2,8 @@
 <div>
     Nome: {{ $produto->nome }}
     Categoria: {{ $produto->categoria }}
-    Fornecedor: {{ $produto->fornecedor }}
     Preco: {{ $produto->preco }}
+    Fornecedor: {{ $produto->fornecedor }}
     
 
     <a href="{{ route('produtos_listar') }}">
